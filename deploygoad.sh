@@ -1,5 +1,5 @@
 #!/bin/bash
-echo "Deploy GOAD lab on Linux for pentest windows server"
+echo "Deploy GOAD v2 on Ubuntu 22.04"
 
 # Ensure we're root
 if [ "$(id -u)" != "0" ]; then
@@ -13,27 +13,15 @@ add-apt-repository -y multiverse
 # Get list of latest packages
 apt-get update
 
-# Check if we're running inside VirtualBox
-if [ `dmidecode -s system-product-name` = "VirtualBox" ]; then
-  # Install VirtualBox guest additions
-  apt-get install -y virtualbox-guest-utils virtualbox-guest-x11
-fi
-
 # Install base packages needed
 apt install git
-apt-get install -y virtualbox python3-pip
+apt-get install -y vmware python3-pip pip vagrant
 
 # Enable IP forwarding on Ubuntu
 if [ "`cat /proc/sys/net/ipv4/ip_forward`" != "1" ]; then
   # Implement in sysctl
   echo net.ipv4.ip_forward = 1 >> /etc/sysctl.conf
   sysctl -p
-fi
-
-# Check if vagrant is installed
-if ! dpkg -s vagrant &> /dev/null; then
-  wget https://releases.hashicorp.com/vagrant/2.4.0/vagrant_2.4.0-1_amd64.deb
-  dpkg --install vagrant_2.4.0-1_amd64.deb
 fi
 
 # Set up prerequisites, not doing a venv but could be changed to that
