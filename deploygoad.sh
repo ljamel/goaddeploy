@@ -19,15 +19,14 @@ apt-get install -y vmware python3-pip pip vagrant
 
 # Enable IP forwarding on Ubuntu
 if [ "`cat /proc/sys/net/ipv4/ip_forward`" != "1" ]; then
-  # Implement in sysctl
+  # Implement in sysctl 
   echo net.ipv4.ip_forward = 1 >> /etc/sysctl.conf
   sysctl -p
 fi
 
 # Set up prerequisites, not doing a venv but could be changed to that
-pip install --upgrade pip
-pip install ansible-core==2.12.6
-pip install pywinrm
+pip install ansible-core==2.12.6 --break-system-packages
+pip install pywinrm --break-system-packages
 
 # Install stuff needed for Vagrant
 vagrant plugin install winrm
