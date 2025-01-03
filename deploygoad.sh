@@ -1,5 +1,5 @@
 #!/bin/bash
-echo "Deploy GOAD v2 on Ubuntu 22.04"
+echo "Deploy GOAD on Linux for pentest windows server"
 
 # Ensure we're root
 if [ "$(id -u)" != "0" ]; then
@@ -32,6 +32,7 @@ pip install pywinrm
 # Install stuff needed for Vagrant
 vagrant plugin install winrm
 vagrant plugin install winrm-elevated
+vagrant plugin install vagrant-vmware-desktop
 
 # Download GOAD
 if [ ! -d /opt/goad ]; then
@@ -42,7 +43,7 @@ fi
 ansible-galaxy install -r /opt/goad/ansible/requirements.yml
 
 # Switch to GOAD folder and deploy VMs
-bash /opt/goad/goad.sh -t install -l GOAD -p virtualbox -m local
+bash /opt/goad/goad.sh -t install -l GOAD -p vmware -m local
 
 if [ $? -ne 0 ]; then
   echo "Deployment failed"
