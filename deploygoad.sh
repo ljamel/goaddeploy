@@ -41,7 +41,8 @@ sudo /opt/vagrant-vmware-desktop/bin/vagrant-vmware-utility service install
 
 # Download GOAD
 if [ ! -d /opt/goad ]; then
-  git clone https://github.com/lkarlslund/GOAD /opt/goad
+  git clone https://github.com/lkarlslund/GOAD /opt/goad &&
+  mkdir /opt/goad/base
 fi
 
 # Install GOAD stuff needed for Ansible
