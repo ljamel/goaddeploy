@@ -39,6 +39,8 @@ sudo unzip -d /opt/vagrant-vmware-desktop/bin vagrant-vmware-utility_1.0.14_linu
 sudo /opt/vagrant-vmware-desktop/bin/vagrant-vmware-utility certificate generate
 sudo /opt/vagrant-vmware-desktop/bin/vagrant-vmware-utility service install
 sudo vagrant plugin install vagrant-disksize
+vagrant plugin install winrm
+vagrant plugin install winrm-fs
 
 # Download GOAD
 if [ ! -d /opt/goad ]; then
