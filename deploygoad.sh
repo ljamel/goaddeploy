@@ -38,6 +38,7 @@ sudo mkdir -p /opt/vagrant-vmware-desktop/bin
 sudo unzip -d /opt/vagrant-vmware-desktop/bin vagrant-vmware-utility_1.0.14_linux_amd64.zip
 sudo /opt/vagrant-vmware-desktop/bin/vagrant-vmware-utility certificate generate
 sudo /opt/vagrant-vmware-desktop/bin/vagrant-vmware-utility service install
+sudo vagrant plugin install vagrant-disksize
 
 # Download GOAD
 if [ ! -d /opt/goad ]; then
