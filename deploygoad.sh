@@ -33,6 +33,8 @@ vagrant plugin install winrm
 vagrant plugin install winrm-elevated
 vagrant plugin install vagrant-vmware-desktop
 
+apt install ruby && gem install winrm-elevated
+
 wget https://releases.hashicorp.com/vagrant-vmware-utility/1.0.14/vagrant-vmware-utility_1.0.14_linux_amd64.zip
 sudo mkdir -p /opt/vagrant-vmware-desktop/bin
 sudo unzip -d /opt/vagrant-vmware-desktop/bin vagrant-vmware-utility_1.0.14_linux_amd64.zip
