@@ -15,7 +15,7 @@ apt-get update
 
 # Install base packages needed
 apt install git
-apt-get install -y vmware python3-pip pip vagrant
+apt-get install -y python3-pip pip vagrant
 apt install python3.13-venv
 
 # Enable IP forwarding on Ubuntu
@@ -32,7 +32,6 @@ pip install pywinrm --break-system-packages
 # Install stuff needed for Vagrant
 vagrant plugin install winrm
 vagrant plugin install winrm-elevated
-vagrant plugin install vagrant-vmware-desktop
 
 apt install ruby && gem install winrm-elevated
 
