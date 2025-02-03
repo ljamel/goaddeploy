@@ -16,7 +16,7 @@ apt-get update
 # Install base packages needed
 apt install git
 apt-get install -y python3-pip pip vagrant
-apt install python3.13-venv
+apt install python3.13-venv &&
 
 # Enable IP forwarding on Ubuntu
 if [ "`cat /proc/sys/net/ipv4/ip_forward`" != "1" ]; then
