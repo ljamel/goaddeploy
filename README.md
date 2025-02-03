@@ -11,6 +11,6 @@ git clone https://github.com/ljamel/goaddeploy.git
 bash goaddeploy/deploygoad.sh 
 
 # start LAB
-cd /opt/goad/
+cd /opt/goad/ &&
 bash goad.sh -p virtualbox
 
