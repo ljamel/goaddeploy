@@ -51,7 +51,7 @@ apt install virtualbox &&
 
 # Download GOAD
 if [ ! -d /opt/goad ]; then
-  git clone https://github.com/lkarlslund/GOAD /opt/goad &&
+  git clone https://github.com/Orange-Cyberdefense/GOAD.git /opt/goad &&
   mkdir /opt/goad/base
 fi
 
