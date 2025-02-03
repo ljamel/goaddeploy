@@ -8,5 +8,5 @@ apt install vagrant ansible pip python3-pip git
 git clone https://github.com/ljamel/goaddeploy.git
 
 # deploy
-bash goaddeploy/deploygoad.sh
+bash goaddeploy/deploygoad.sh -p virtualbox
 
