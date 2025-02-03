@@ -45,6 +45,10 @@ vagrant plugin install winrm
 vagrant plugin install winrm-fs
 vagrant plugin install winrm-elevated
 
+echo "deb http://deb.debian.org/debian/ sid main contrib non-free" >> /etc/apt/sources.list
+apt update &&
+apt install virtualbox &&
+
 # Download GOAD
 if [ ! -d /opt/goad ]; then
   git clone https://github.com/lkarlslund/GOAD /opt/goad &&
