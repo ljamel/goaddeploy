@@ -36,11 +36,6 @@ vagrant plugin install vagrant-vmware-desktop
 
 apt install ruby && gem install winrm-elevated
 
-wget https://releases.hashicorp.com/vagrant-vmware-utility/1.0.14/vagrant-vmware-utility_1.0.14_linux_amd64.zip
-sudo mkdir -p /opt/vagrant-vmware-desktop/bin
-sudo unzip -d /opt/vagrant-vmware-desktop/bin vagrant-vmware-utility_1.0.14_linux_amd64.zip
-sudo /opt/vagrant-vmware-desktop/bin/vagrant-vmware-utility certificate generate
-sudo /opt/vagrant-vmware-desktop/bin/vagrant-vmware-utility service install
 sudo vagrant plugin install vagrant-disksize
 vagrant plugin install winrm
 vagrant plugin install winrm-fs
@@ -60,7 +55,7 @@ fi
 ansible-galaxy install -r /opt/goad/ansible/requirements.yml
 
 # Switch to GOAD folder and deploy VMs
-bash /opt/goad/goad.sh -t install -l GOAD -p vmware -m local
+bash /opt/goad/goad.sh -t install -l GOAD -p virtualbox -m local
 
 if [ $? -ne 0 ]; then
   echo "Deployment failed"
