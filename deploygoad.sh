@@ -40,6 +40,7 @@ sudo vagrant plugin install vagrant-disksize
 vagrant plugin install winrm
 vagrant plugin install winrm-fs
 vagrant plugin install winrm-elevated
+vagrant plugin install vagrant-reload
 
 echo "deb http://deb.debian.org/debian/ sid main contrib non-free" >> /etc/apt/sources.list
 apt update &&
