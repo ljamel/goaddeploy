@@ -41,6 +41,7 @@ vagrant plugin install winrm
 vagrant plugin install winrm-fs
 vagrant plugin install winrm-elevated
 vagrant plugin install vagrant-reload
+vagrant plugin install vagrant-vbguest
 
 echo "deb http://deb.debian.org/debian/ sid main contrib non-free" >> /etc/apt/sources.list
 apt update &&
