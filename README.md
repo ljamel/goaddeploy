@@ -12,5 +12,4 @@ bash goaddeploy/deploygoad.sh
 
 # start LAB
 cd /opt/goad/ &&
-bash goad.sh -p virtualbox
-
+bash goad.sh -t install -p virtualbox
