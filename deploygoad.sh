@@ -7,6 +7,9 @@ if [ "$(id -u)" != "0" ]; then
   exit 1
 fi
 
+# install dependances
+apt install vagrant ansible pip python3-pip git &&
+
 # Add repositories
 add-apt-repository -y multiverse
 
